@@ -10,6 +10,7 @@
 		97E16B481F907B76003449AB /* Blah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E16B3E1F907B76003449AB /* Blah.framework */; };
 		97E16B4D1F907B76003449AB /* BlahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E16B4C1F907B76003449AB /* BlahTests.swift */; };
 		97E16B4F1F907B76003449AB /* Blah.h in Headers */ = {isa = PBXBuildFile; fileRef = 97E16B411F907B76003449AB /* Blah.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97E16B591F907B83003449AB /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E16B581F907B83003449AB /* Finder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		97E16B471F907B76003449AB /* BlahTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlahTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E16B4C1F907B76003449AB /* BlahTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlahTests.swift; sourceTree = "<group>"; };
 		97E16B4E1F907B76003449AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E16B581F907B83003449AB /* Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				97E16B411F907B76003449AB /* Blah.h */,
 				97E16B421F907B76003449AB /* Info.plist */,
+				97E16B581F907B83003449AB /* Finder.swift */,
 			);
 			path = Blah;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					97E16B3D1F907B76003449AB = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					97E16B461F907B76003449AB = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E16B591F907B83003449AB /* Finder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 		97E16B531F907B76003449AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -347,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = maltagliati.Blah;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -354,6 +361,7 @@
 		97E16B541F907B76003449AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -375,6 +383,7 @@
 		97E16B561F907B76003449AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BlahTests/Info.plist;
@@ -388,6 +397,7 @@
 		97E16B571F907B76003449AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BlahTests/Info.plist;

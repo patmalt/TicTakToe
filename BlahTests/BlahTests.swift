@@ -1,36 +1,90 @@
-//
-//  BlahTests.swift
-//  BlahTests
-//
-//  Created by Patrick Maltagliati on 10/12/17.
-//  Copyright © 2017 Patrick Maltagliati. All rights reserved.
-//
 
 import XCTest
 @testable import Blah
 
 class BlahTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_row_1() {
+        let x = ["X X X",
+                 "X O X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "X")
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func test_row_2() {
+        let x = ["X O X",
+                 "X X X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "X")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_row_3() {
+        let x = ["O X O",
+                 "X O X",
+                 "X X X"]
+        XCTAssertEqual(Finder.winner(input: x), "X")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_column_1() {
+        let x = ["O O X",
+                 "O X X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "O")
     }
     
+    func test_column_2() {
+        let x = ["O O X",
+                 "X O O",
+                 "O O X"]
+        XCTAssertEqual(Finder.winner(input: x), "O")
+    }
+    
+    func test_column_3() {
+        let x = ["X O O",
+                 "X X O",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "O")
+    }
+    
+    func test_diagonal_1() {
+        let x = ["X O O",
+                 "X X O",
+                 "O X X"]
+        XCTAssertEqual(Finder.winner(input: x), "X")
+    }
+    
+    func test_diagonal_2() {
+        let x = ["X O O",
+                 "X O O",
+                 "O X X"]
+        XCTAssertEqual(Finder.winner(input: x), "O")
+    }
+    
+    func test_draw() {
+        let x = ["X O O",
+                 "O X X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "draw")
+    }
+    
+    func test_invalid_1() {
+        let x = ["X O ",
+                 "O X X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "invalid")
+    }
+    
+    func test_invalid_2() {
+        let x = ["X O X X",
+                 "O X X",
+                 "O X O"]
+        XCTAssertEqual(Finder.winner(input: x), "invalid")
+    }
+    
+    func test_invalid_3() {
+        let x = ["X O",
+                 "O X",
+                 "O X"]
+        XCTAssertEqual(Finder.winner(input: x), "invalid")
+    }
 }
