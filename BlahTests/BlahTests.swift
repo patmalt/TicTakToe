@@ -87,4 +87,12 @@ class BlahTests: XCTestCase {
                  "O X"]
         XCTAssertEqual(Finder.winner(input: x), "invalid")
     }
+    
+    func test_4x4() {
+        let x = ["X O O O",
+                 "X X X X",
+                 "O X O X",
+                 "O X O X"]
+        XCTAssertEqual(Finder.winner(input: x), "X")
+    }
 }
