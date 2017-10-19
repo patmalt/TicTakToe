@@ -14,8 +14,8 @@ class Finder {
                 guard let first = row.first else {
                     return
                 }
-                let matches = row.map { $0 == first }.filter { $0 }.count
-                if matches == row.count {
+                let matches = row.map { $0 == first }.reduce(true, { return $0 && $1 })
+                if matches {
                     winner = "\(first)"
                 }
             }
@@ -24,8 +24,8 @@ class Finder {
             if let firstRow = rows.first {
                 _ = firstRow.enumerated().map { index, value in
                     let column = rows.map { return $0[index] }
-                    let matches = column.map { $0 == value }.filter { $0 }.count
-                    if matches == column.count {
+                    let matches = column.map { $0 == value }.reduce(true, { return $0 && $1 })
+                    if matches {
                         winner = "\(value)"
                     }
                 }
@@ -36,8 +36,8 @@ class Finder {
                 let diagonal = rows.enumerated().map { index, value in
                     return rows[index][index]
                 }
-                let matches = diagonal.map { $0 == first }.filter { $0 }.count
-                if matches == diagonal.count {
+                let matches = diagonal.map { $0 == first }.reduce(true, { return $0 && $1 })
+                if matches {
                     winner = "\(first)"
                 }
             }
@@ -48,8 +48,8 @@ class Finder {
                 let diagonal = reversed.enumerated().map { index, value in
                     return reversed[index][index]
                 }
-                let matches = diagonal.map { $0 == first }.filter { $0 }.count
-                if matches == diagonal.count {
+                let matches = diagonal.map { $0 == first }.reduce(true, { return $0 && $1 })
+                if matches {
                     winner = "\(first)"
                 }
             }
